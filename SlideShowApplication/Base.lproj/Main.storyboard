@@ -1,24 +1,225 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SlideShowApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yfc-YX-LZX">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8iW-R1-NjE">
+                                        <rect key="frame" x="57" y="70" width="300" height="169"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="W0h-yA-Zk3"/>
+                                            <constraint firstAttribute="height" constant="169" id="jji-Y6-Vl6"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SCf-bY-4st">
+                                        <rect key="frame" x="57" y="259" width="99" height="99"/>
+                                        <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="99" id="gUo-H1-TKM"/>
+                                            <constraint firstAttribute="height" constant="99" id="jR4-p3-XDo"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="18"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <size key="titleShadowOffset" width="2" height="2"/>
+                                        <state key="normal" title="進む">
+                                            <color key="titleShadowColor" systemColor="labelColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="nextSlide:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xPu-oE-E6F"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4LS-dV-pJ7">
+                                        <rect key="frame" x="157.66666666666666" y="259" width="98.999999999999972" height="99"/>
+                                        <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="99" id="STL-HG-q25"/>
+                                            <constraint firstAttribute="width" constant="99" id="Yoa-0k-wKT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="18"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <size key="titleShadowOffset" width="2" height="2"/>
+                                        <state key="normal" title="戻る">
+                                            <color key="titleShadowColor" systemColor="labelColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="goBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6tT-Zq-ygO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Y7Y-T5-XUU">
+                                        <rect key="frame" x="258" y="259" width="99" height="99"/>
+                                        <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="99" id="47q-eu-VJX"/>
+                                            <constraint firstAttribute="width" constant="99" id="gGL-sk-vtu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="18"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <size key="titleShadowOffset" width="2" height="2"/>
+                                        <state key="normal" title="再生">
+                                            <color key="titleShadowColor" systemColor="labelColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="playPause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MVQ-pW-fsn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ykM-pN-hzZ">
+                                        <rect key="frame" x="57" y="70" width="300" height="169"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="169" id="2Zo-gh-6FJ"/>
+                                            <constraint firstAttribute="width" constant="300" id="YLe-iP-q9C"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=""/>
+                                        <connections>
+                                            <segue destination="0pc-u0-XIl" kind="show" id="QU8-Wn-G8N"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstItem="4LS-dV-pJ7" firstAttribute="centerX" secondItem="yfc-YX-LZX" secondAttribute="centerX" id="3Rj-L0-EmA"/>
+                                    <constraint firstItem="SCf-bY-4st" firstAttribute="leading" secondItem="8iW-R1-NjE" secondAttribute="leading" id="L1V-WH-VMg"/>
+                                    <constraint firstItem="ykM-pN-hzZ" firstAttribute="bottom" secondItem="8iW-R1-NjE" secondAttribute="bottom" id="UKd-xg-HYM"/>
+                                    <constraint firstItem="SCf-bY-4st" firstAttribute="top" secondItem="8iW-R1-NjE" secondAttribute="bottom" constant="20" id="WD4-rl-vi6"/>
+                                    <constraint firstItem="Y7Y-T5-XUU" firstAttribute="top" secondItem="8iW-R1-NjE" secondAttribute="bottom" constant="20" id="hiK-Dr-hZW"/>
+                                    <constraint firstItem="Y7Y-T5-XUU" firstAttribute="trailing" secondItem="8iW-R1-NjE" secondAttribute="trailing" id="mA9-52-rdI"/>
+                                    <constraint firstItem="8iW-R1-NjE" firstAttribute="centerX" secondItem="yfc-YX-LZX" secondAttribute="centerX" id="nid-Sa-Mfn"/>
+                                    <constraint firstItem="4LS-dV-pJ7" firstAttribute="top" secondItem="8iW-R1-NjE" secondAttribute="bottom" constant="20" id="rJJ-zL-PlP"/>
+                                    <constraint firstItem="ykM-pN-hzZ" firstAttribute="leading" secondItem="8iW-R1-NjE" secondAttribute="leading" id="rcc-AF-IZo"/>
+                                    <constraint firstItem="ykM-pN-hzZ" firstAttribute="leading" secondItem="8iW-R1-NjE" secondAttribute="leading" id="uVh-GY-q0O"/>
+                                    <constraint firstItem="8iW-R1-NjE" firstAttribute="top" secondItem="yfc-YX-LZX" secondAttribute="top" constant="70" id="veV-rg-BvZ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yfc-YX-LZX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9DF-m1-1nJ"/>
+                            <constraint firstItem="yfc-YX-LZX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="GLY-sr-1Go"/>
+                            <constraint firstItem="yfc-YX-LZX" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="Ocq-18-Avi"/>
+                            <constraint firstAttribute="bottom" secondItem="yfc-YX-LZX" secondAttribute="bottom" id="RMy-sy-Sa0"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="slideImage" destination="8iW-R1-NjE" id="Ncu-fz-rBs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="20.610687022900763" y="3.5211267605633805"/>
+        </scene>
+        <!--Zoom View Controller-->
+        <scene sceneID="hp4-Sn-Ba0">
+            <objects>
+                <viewController modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" id="0pc-u0-XIl" customClass="ZoomViewController" customModule="SlideShowApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YWA-kW-hfO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tqC-WI-5QK">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="car-Hd-JPE">
+                                        <rect key="frame" x="0.0" y="686" width="414" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="VB2-dE-35x"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="18"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <size key="titleShadowOffset" width="2" height="2"/>
+                                        <state key="normal" title="戻る">
+                                            <color key="titleShadowColor" systemColor="labelColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="goNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VEZ-EB-kg9"/>
+                                            <segue destination="kVc-pN-iGZ" kind="unwind" unwindAction="unwind:" id="K47-Mk-LeX"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xh8-Rd-a3W">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="686"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstItem="car-Hd-JPE" firstAttribute="centerX" secondItem="tqC-WI-5QK" secondAttribute="centerX" id="1o4-Sr-SL5"/>
+                                    <constraint firstItem="car-Hd-JPE" firstAttribute="leading" secondItem="tqC-WI-5QK" secondAttribute="leading" id="APH-i4-fdJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="car-Hd-JPE" secondAttribute="trailing" id="Bsz-jf-wV8"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xh8-Rd-a3W" secondAttribute="bottom" constant="50" id="G78-Am-5Dn"/>
+                                    <constraint firstItem="Xh8-Rd-a3W" firstAttribute="leading" secondItem="tqC-WI-5QK" secondAttribute="leading" id="PiK-Hl-nhA"/>
+                                    <constraint firstAttribute="bottom" secondItem="car-Hd-JPE" secondAttribute="bottom" id="SDp-Hk-vzv"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xh8-Rd-a3W" secondAttribute="trailing" id="W0M-Oi-WIq"/>
+                                    <constraint firstItem="Xh8-Rd-a3W" firstAttribute="top" secondItem="tqC-WI-5QK" secondAttribute="top" id="zTc-tx-kuh"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="f8L-Ty-C9D"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tqC-WI-5QK" firstAttribute="leading" secondItem="YWA-kW-hfO" secondAttribute="leading" id="2o3-Zj-RZB"/>
+                            <constraint firstAttribute="trailing" secondItem="tqC-WI-5QK" secondAttribute="trailing" id="G5o-G5-IJx"/>
+                            <constraint firstAttribute="bottom" secondItem="tqC-WI-5QK" secondAttribute="bottom" id="VzH-tL-Ma6"/>
+                            <constraint firstItem="tqC-WI-5QK" firstAttribute="top" secondItem="YWA-kW-hfO" secondAttribute="top" id="eML-X3-m72"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bdL-Gy-eFK"/>
+                    <connections>
+                        <outlet property="zoomImage" destination="Xh8-Rd-a3W" id="bmf-pw-b64"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JB0-Sh-n5f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="kVc-pN-iGZ" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="857.25190839694653" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
