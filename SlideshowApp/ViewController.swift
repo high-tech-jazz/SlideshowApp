@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let sampleImage = UIImage(named: "sample1")
+        let sampleImage = UIImage(named: sample[0])
         slideImage.image = sampleImage
     }
     
