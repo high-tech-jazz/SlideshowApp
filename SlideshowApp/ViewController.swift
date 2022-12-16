@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var slideImage: UIImageView!
+    @IBOutlet weak var playPauseBtn: UIButton!
+    
     var cnt:Int = 1
     var timer: Timer!
     let sample = ["sample1.jpeg", "sample2.jpeg", "sample3.jpeg"]
@@ -33,6 +35,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func unwind(_ segue: UIStoryboardSegue){
+        playPauseBtn.setTitle("再生", for: .normal)
     }
 
     @IBAction func nextSlide(_ sender: Any) {
@@ -71,8 +74,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func stopTimer(_ sender: Any) {
-        self.timer.invalidate()
-        self.timer = nil
+        if self.timer != nil {
+            self.timer.invalidate()
+            self.timer = nil
+        }
     }
     
     func changeSlide(){

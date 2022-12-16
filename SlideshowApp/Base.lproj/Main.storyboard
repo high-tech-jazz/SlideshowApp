@@ -137,6 +137,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="playPauseBtn" destination="Y7Y-T5-XUU" id="c9l-fW-VU2"/>
                         <outlet property="slideImage" destination="8iW-R1-NjE" id="Ncu-fz-rBs"/>
                     </connections>
                 </viewController>
